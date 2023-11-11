@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  DB_Host: cHJvZC1kYg==
+  DB_Password: cGFzd3Jk
+  DB_User: cm9vdA==
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: prod-db
+  namespace: prod
