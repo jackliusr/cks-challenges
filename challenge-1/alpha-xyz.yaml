@@ -25,7 +25,7 @@ spec:
         persistentVolumeClaim:
           claimName: alpha-pvc
       containers:
-      - image: nginx:1.19.6
+      - image: nginx:alpine
         name: nginx
         volumeMounts:
         - name: data-volume
