@@ -25,9 +25,22 @@ spec:
       name: dev-web
     spec:
       containers:
-      - envFrom:
-        - secretRef:
-            name: prod-db
+      - env:
+        - name: DB_Host
+          valueFrom:
+            secretKeyRef:
+              key: DB_Host
+              name: prod-db 
+        - name: DB_User
+          valueFrom:
+            secretKeyRef:
+              key: DB_User
+              name: prod-db 
+        - name: DB_Password
+          valueFrom:
+            secretKeyRef:
+              key: DB_Password
+              name: prod-db 
         image: mmumshad/simple-webapp-mysql
         imagePullPolicy: Always
         name: webapp-mysql
