@@ -15,7 +15,7 @@ set autoindent
 ```bash
 cp /root/usr.sbin.nginx /etc/apparmor.d/usr.sbin.nginx
 apparmor_parser /etc/apparmor.d/usr.sbin.nginx
-cat <<EOF | xargs -n1 -I{}  sh -c "echo {}; trivy image {} -q --scanners vuln | grep CRITICAL | wc -l"
+cat <<EOF | xargs -n1 -I{}  sh -c "echo {}; trivy image -q -s CRITICAL  {} | grep -B2 Total"
 nginx:alpine
 bitnami/nginx
 nginx:1.13
